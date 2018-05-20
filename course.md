@@ -54,7 +54,6 @@
 - 老段带你学鸟哥Linux视频教程
 - nginx从基础到实践
 - nginx高级视频教程 
-- NodeJS视频教程
 
 ## 数据库
 - 六天带你玩转MySQL
@@ -79,3 +78,4 @@
 - NodeJS视频教程
 - AngularJS入门视频教程
 - 带你入门vue2.0及案例开发（完整版）
+- NodeJS视频教程
