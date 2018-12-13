@@ -1,4 +1,4 @@
-### RESTful API
+### 一、RESTful API
 简单的说：RESTful是一种架构的规范与约束、原则，符合这种规范的架构就是RESTful架构。
  
 先看REST是什么意思，英文Representational state transfer 表述性状态转移 其实就是对 资源 的表述性状态转移。
@@ -86,3 +86,22 @@ RESTful 架构的核心规范与约束：统一接口
 * 409 （conflict）- 通用冲突
 * 500 （internal server error）- 通用错误响应
 * 503 （Service Unavailable）- 服务端当前无法处理请求
+
+
+### 二、CSRF
+CSRF（Cross-site request forgery）跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本（XSS），但它与XSS非常不同，**XSS利用站点内的信任用户**，而**CSRF则通过伪装来自受信任用户的请求来利用受信任的网站**。与XSS攻击相比，CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范，所以被认为比XSS更具危险性。
+
+一般通过获取用户的session、cookie信息，进行伪造正常用户的各种操作。
+
+##### 图示：
+<img src="https://github.com/msp233/note/blob/master/imgs/CSRF攻击.jpg" alt="CSRF攻击.jpg"/>
+
+##### 举例： 
+CSRF攻击的主要目的是让用户在不知情的情况下攻击自己已登录的一个系统，类似于钓鱼。如用户当前已经登录了邮箱，或bbs，同时用户又在使用另外一个，已经被你控制的站点，我们姑且叫它钓鱼网站。这个网站上面可能因为某个图片吸引你，你去点击一下，此时可能就会触发一个js的点击事件，构造一个bbs发帖的请求，去往你的bbs发帖，由于当前你的浏览器状态已经是登陆状态，所以session登陆cookie信息都会跟正常的请求一样，纯天然的利用当前的登陆状态，让用户在不知情的情况下，帮你发帖或干其他事情。
+
+##### CSRF防御
+通过 referer、token 或者 验证码 来检测用户提交。
+尽量不要在页面的链接中暴露用户隐私信息。
+对于用户修改删除等操作最好都使用post 操作 。
+避免全站通用的cookie，严格设置cookie的域。
+
