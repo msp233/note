@@ -14,7 +14,7 @@ RESTful 架构的核心规范与约束：统一接口
 即客户只可以通过服务端所返回各结果中所包含的信息来得到下一步操作所需要的信息，如到底是向哪个URL发送请求等。也就是说，一个典型的REST服务不需要额外的文档标示通过哪些URL访问特定类型的资源，而是通过服务端返回的响应来标示到底能在该资源上执行什么样的操作
 ![39ab28e0278ea13aed58ed2446421132.png](evernotecid://2E3F4FCD-9696-48F9-B350-F525479C0FEB/appyinxiangcom/9961630/ENResource/p485)
 <img src='/msp233/note/blob/master/imgs/RESTful响应内容.jpg' alt="RESTful请求响应结果"/>
-
+[RESTful请求响应结果](/msp233/note/blob/master/imgs/RESTful响应内容.jpg)
 在设计web接口的时候，REST主要是用于定义接口名，接口名一般是用名次写，不用动词，通过请求类型进行区分。
 例如：
 1. get 表查找
